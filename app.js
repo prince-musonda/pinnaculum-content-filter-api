@@ -1,9 +1,10 @@
 const express = require("express");
 const multer = require("multer");
+const cors = require("cors");
 const contentDetect = require("./detect");
 
 const app = express();
-
+app.use(cors());
 // multer configuration
 const storage = multer.memoryStorage(); // store the image file in memeory as buffers
 const upload = multer({ storage: storage });
